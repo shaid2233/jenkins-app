@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         NETLIFY_SITE_ID = 'bab9317f-bdbc-48bc-b8af-08df593121d9'
-        NETLIFY_TOKEN = credentials('netlify-token')
+        NETLIFY_AUTH_TOKEN = credentials('netlify-token')
     }
 
     stages {
@@ -90,11 +90,22 @@ pipeline {
                     echo "Deploying to production. Site ID: $NETLIFY_SITE_ID"
                     node_modules/.bin/netlify status
                     node_modules/.bin/netlify deploy --dir=build --prod
-                    
-                    
                 '''
             }
         }
     }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+  
